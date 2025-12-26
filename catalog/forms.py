@@ -40,9 +40,11 @@ class EquipmentForm(BootstrapFormMixin, forms.ModelForm):
         super().__init__(*args, **kwargs)
         self._apply_bootstrap()
         self.fields["attributes"].widget.attrs.setdefault("rows", 4)
-        equipment_type: EquipmentType | None = self.initial.get("equipment_type") or (
+        equipment_type = self.initial.get("equipment_type") or (
             self.instance.equipment_type if self.instance.pk else None
         )
+        if isinstance(equipment_type, int):
+            equipment_type = EquipmentType.objects.filter(pk=equipment_type).first()
         if equipment_type and equipment_type.default_attributes:
             for attr_name in equipment_type.default_attributes:
                 self.fields["attributes"].initial.setdefault(attr_name, "")

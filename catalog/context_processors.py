@@ -7,7 +7,6 @@ from .models import CartItem
 
 
 def catalog_context(request: HttpRequest) -> dict[str, int]:
-    """Add reusable catalog context (e.g., cart counter) to templates."""
     user = request.user
     if isinstance(user, AnonymousUser) or not user.is_authenticated:
         return {"cart_count": 0, "can_add_equipment": False}

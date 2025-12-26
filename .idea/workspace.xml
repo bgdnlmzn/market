@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b75881f6-0953-4c64-9fbe-d3e396f344f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/market.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="b75881f6-0953-4c64-9fbe-d3e396f344f5" name="Changes" comment="feat: giga mega kjrutoi django project without using llm promise))))))))))))))))">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "bgdnlmzn"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/bgdnlmzn/market.git",
+    "accountId": "e2c4adc8-95c5-4149-81d7-e41c7dfb09ec"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -56,12 +66,25 @@
       <updated>1766746926015</updated>
       <workItem from="1766746927027" duration="5413000" />
       <workItem from="1766762622256" duration="912000" />
-      <workItem from="1766774854273" duration="1047000" />
+      <workItem from="1766774854273" duration="4660000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: giga mega kjrutoi django project without using llm promise))))))))))))))))">
+      <option name="closed" value="true" />
+      <created>1766776439949</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766776439949</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: giga mega kjrutoi django project without using llm promise))))))))))))))))" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: giga mega kjrutoi django project without using llm promise))))))))))))))))" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
