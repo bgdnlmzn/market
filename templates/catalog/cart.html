@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Корзина · Каталог{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h4 mb-0">Корзина</h1>
+    <a class="btn btn-outline-secondary" href="{% url 'catalog:equipment_list' %}">Вернуться к каталогу</a>
+</div>
+
+{% if object_list %}
+    <div class="list-group mb-3">
+        {% for item in object_list %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h2 class="h6 mb-1">{{ item.equipment.name }}</h2>
+                    <p class="mb-0 text-muted small">
+                        {{ item.equipment.equipment_type }} · {{ item.equipment.site }} / {{ item.equipment.workshop }}
+                    </p>
+                </div>
+                <div class="text-end">
+                    <div class="fw-semibold mb-1">x{{ item.quantity }}</div>
+                    <form method="post" action="{% url 'catalog:remove_from_cart' item.pk %}">
+                        {% csrf_token %}
+                        <button class="btn btn-sm btn-outline-danger" type="submit">Удалить</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="alert alert-success">Оборудование в корзине не резервируется. Оформите заявку, чтобы мы связались с вами.</div>
+    <a class="btn btn-primary" href="{% url 'catalog:checkout' %}">Оформить заявку</a>
+{% else %}
+    <div class="alert alert-info">Корзина пуста.</div>
+{% endif %}
+{% endblock %}
+

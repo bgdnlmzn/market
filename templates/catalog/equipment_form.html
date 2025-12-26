@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ view.object|default:"Создание оборудования" }} · Каталог{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="h4 mb-3">
+            {% if view.object %}Редактирование: {{ view.object.name }}{% else %}Новое оборудование{% endif %}
+        </h1>
+        <form method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+                    {% for error in field.errors %}
+                        <div class="invalid-feedback d-block">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:equipment_type_create' %}">Добавить тип</a>
+                <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:site_create' %}">Добавить площадку</a>
+                <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:workshop_create' %}">Добавить цех</a>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary" type="submit">Сохранить</button>
+                <a class="btn btn-outline-secondary" href="{% url 'catalog:equipment_list' %}">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

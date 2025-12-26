@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Регистрация · Каталог{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <div class="text-center mb-3">
+                    <div class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill">EQatalog</div>
+                </div>
+                <h1 class="h4 mb-2 text-center">Регистрация</h1>
+                <p class="text-center text-muted mb-4">Создайте аккаунт, чтобы управлять каталогом.</p>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.help_text %}<div class="form-text">{{ field.help_text|safe }}</div>{% endif %}
+                            {% for error in field.errors %}
+                                <div class="invalid-feedback d-block">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    <button class="btn btn-primary w-100" type="submit">Создать аккаунт</button>
+                </form>
+                <p class="mt-3 text-center small mb-0">Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
